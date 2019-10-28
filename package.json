@@ -3,14 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "apollo-boost": "^0.4.4",
-    "graphql": "^14.5.8",
-    "react": "^16.11.0",
-    "react-apollo": "^3.1.3",
-    "react-dom": "^16.11.0",
+    "apollo-boost": "0.1.4",
+    "apollo-link-context": "1.0.7",
+    "apollo-link-ws": "1.0.7",
+    "graphql": "14.5.8",
+    "react": "16.11.0",
+    "react-apollo": "2.1.0",
+    "react-dom": "16.11.0",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "subscriptions-transport-ws": "0.9.16"
   },
   "scripts": {
     "start": "react-scripts start",
