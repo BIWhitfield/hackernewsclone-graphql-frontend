@@ -98,7 +98,6 @@ class LinkList extends Component {
             return (
               <Fragment>
                 {linksToRender.map((link, index) => {
-                  console.log('LINKKKK: ', link)
                   return (
                   <Link
                     key={link.id}
@@ -143,7 +142,6 @@ class LinkList extends Component {
     _getLinksToRender = data => {
       const isNewPage = this.props.location.pathname.includes('new')
       if (isNewPage) {
-        console.log('IS NEW PAGE: ', data.feed.links)
         return data.feed.links
       }
       const rankedLinks = data.feed.links.slice()
@@ -179,11 +177,9 @@ class LinkList extends Component {
     }
 
     _subscribeToNewLinks = subscribeToMore => {
-      console.log('SUBSCRIBE TO NEW LINKS1: ', subscribeToMore)
       subscribeToMore({
         document: NEW_LINKS_SUBSCRIPTION,
         updateQuery: (prev, { subscriptionData }) => {
-          console.log('SUBSCRIBE TO NEW LINKS: ', prev, 'SUBSCRIPTION DATA: ', subscriptionData)
           if (!subscriptionData.data) return prev
           const newLink = subscriptionData.data.newLink
           const exists = prev.feed.links.find(({ id }) => id === newLink.id);
